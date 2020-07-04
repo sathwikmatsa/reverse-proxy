@@ -22,13 +22,17 @@
 */
 
 const PORT = process.env.PORT || 8213;
+console.log("PORT ENV: ", PORT);
 
 var http = require("http"),
   net = require("net"),
   httpProxy = require("http-proxy"),
   url = require("url");
 
+console.log("libs initialized.");
+
 var proxy = httpProxy.createServer();
+console.log("proxy initialized");
 
 var server = http
   .createServer(function (req, res) {
@@ -37,6 +41,8 @@ var server = http
     proxy.web(req, res, { target: target, secure: false });
   })
   .listen(PORT);
+
+console.log("server initialized");
 
 server.on("connect", function (req, socket) {
   var serverUrl = url.parse("https://" + req.url);
