@@ -1,0 +1,7 @@
+{
+  "name": "reverse-proxy",
+  "description": "reverse proxy server",
+  "repository": "https://github.com/sathwikmatsa/reverse-proxy",
+  "logo": "https://image.flaticon.com/icons/png/512/23/23931.png",
+  "keywords": ["proxy", "node"]
+}
